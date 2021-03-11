@@ -1,11 +1,14 @@
 import './App.css';
-
+import React, {useEffect, useState} from "react";
+import ContentCard from './Components/ContentCard';
 import { Container, Row, Col, Card, Button} from 'react-bootstrap';
+
 
 function App() {
 
   function addWentWell() {
-    numclicked = numclicked+1;
+    setCardList(cardList.concat(<ContentCard text="test"></ContentCard>));
+    console.log(cardList);
   }
 
   function addImprove(){
@@ -16,7 +19,8 @@ function App() {
     console.log("test");
   }
 
-  var numclicked = 1;
+  const [cardList, setCardList] = useState([]);
+
   return (
     <div className="App">
       <Container>
@@ -28,9 +32,6 @@ function App() {
                   <Col>
                   Team Apex Legends
                   </Col>
-                  <Col>
-                  {numclicked}
-                  </Col>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -39,9 +40,10 @@ function App() {
           <Col>
             <Card style={{ height: '800px' }}>
               <Card.Body>
-                <Card.Title>What went well</Card.Title>
+                <Card.Title>Positive Outcomes</Card.Title>
                 <Card.Text>
                 <Button onClick={addWentWell}>Add Item</Button>
+                {cardList}
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -49,7 +51,7 @@ function App() {
           <Col>
           <Card style={{ height: '800px' }}>
               <Card.Body>
-                <Card.Title>What can be improved</Card.Title>
+                <Card.Title>Needs Improvement</Card.Title>
                 <Card.Text>
                 <Button onClick={addImprove}>Add Item</Button>
                 </Card.Text>
@@ -59,7 +61,7 @@ function App() {
           <Col>
           <Card style={{ height: '800px' }}>
               <Card.Body>
-                <Card.Title>Action Items</Card.Title>
+                <Card.Title>Actionable Items</Card.Title>
                 <Card.Text>
                 <Button onClick={addActionItem}>Add Item</Button>
                 </Card.Text>
