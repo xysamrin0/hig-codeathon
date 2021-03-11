@@ -16,12 +16,12 @@ function ContentCard({text}){
 
         <div style={{
                     position: 'absolute',
-                    bottom:24,
+                    bottom:34,
                     right:5,
                 }}>{numReactionsHeart}</div>
         <Button style={{
                     position: 'absolute',
-                    bottom:20,
+                    bottom:30,
                     right:7,
                     border: "none",
                     background: "none"
