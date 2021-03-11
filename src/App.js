@@ -8,17 +8,20 @@ function App() {
 
   function addWentWell() {
     setCardListPositive(cardListPositive.concat(<ContentCard text={positiveText}></ContentCard>));
+    setPositiveText("");
     console.log(cardListPositive);
   }
 
   function addImprove(){
     setCardListImprove(cardListImprove.concat(<ContentCard text={improveText}></ContentCard>));
+    setImproveText("");
     console.log(cardListImprove);
   }
 
 
   function addActionItem(){
     setCardListAction(cardListAction.concat(<ContentCard text={actionText}></ContentCard>));
+    setActionText("");
     console.log(cardListAction);
   }
 
@@ -65,8 +68,10 @@ function App() {
 
                 <Card.Title>Positive Outcomes</Card.Title>
                 <Card.Text>
-                <textarea value={positiveText} onChange={handleWentWellText} />
-                <Button onClick={addWentWell}>Add Item</Button>
+                <Col>
+                  <textarea value={positiveText} onChange={handleWentWellText} />
+                </Col>
+                <Button onClick={addWentWell} style={{ marginBottom: '5px' }}>Add Item</Button>
 
                 {cardListPositive}
                 </Card.Text>
@@ -78,8 +83,10 @@ function App() {
               <Card.Body>
                 <Card.Title>Needs Improvement</Card.Title>
                 <Card.Text>
-                <textarea value={improveText} onChange={handleImproveText} />
-                <Button onClick={addImprove}>Add Item</Button>
+                <Col>
+                  <textarea value={improveText} onChange={handleImproveText} />
+                </Col>
+                <Button onClick={addImprove} style={{ marginBottom: '5px' }}>Add Item</Button>
 
                 {cardListImprove}
                 </Card.Text>
@@ -91,8 +98,10 @@ function App() {
               <Card.Body>
                 <Card.Title>Actionable Items</Card.Title>
                 <Card.Text>
-                <textarea value={actionText} onChange={handleActionText} />
-                <Button onClick={addActionItem}>Add Item</Button>
+                <Col>
+                  <textarea value={actionText} onChange={handleActionText} />
+                </Col>
+                <Button onClick={addActionItem} style={{ marginBottom: '5px' }}>Add Item</Button>
 
                 {cardListAction}
                 </Card.Text>
