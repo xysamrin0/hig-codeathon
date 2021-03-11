@@ -1,20 +1,26 @@
 import './App.css';
+import React, {useEffect, useState} from "react";
+import ContentCard from './Components/ContentCard';
 import { Container, Row, Col, Card, Button} from 'react-bootstrap';
 
 
 function App() {
 
-  const addWentWell = (test) =>{
-    numclicked = numclicked+1;
-  };
+  function addWentWell() {
+    setCardList(cardList.concat(<ContentCard text="test"></ContentCard>));
+    console.log(cardList);
+  }
 
-  const addImprove = (test) =>{
+  function addImprove(){
     console.log("test");
-  };
-  const addActionItem = (test) =>{
+  }
+
+  function addActionItem(){
     console.log("test");
-  };
-  var numclicked = 1;
+  }
+
+  const [cardList, setCardList] = useState([]);
+
   return (
     <div className="App">
         <img src="https://s0.hfdstatic.com/sites/higux/dist/images/routing-example-2.svg" class="img-responsive" alt="routing-image2"></img>
@@ -27,9 +33,6 @@ function App() {
                   <Col>
                   Team Apex Legends
                   </Col>
-                  <Col>
-                  {numclicked}
-                  </Col>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -38,9 +41,10 @@ function App() {
           <Col>
             <Card style={{ height: '800px' }}>
               <Card.Body>
-                <Card.Title>What went well</Card.Title>
+                <Card.Title>Positive Outcomes</Card.Title>
                 <Card.Text>
-                <Button onclick={addWentWell}>Add Item</Button>
+                <Button onClick={addWentWell}>Add Item</Button>
+                {cardList}
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -48,9 +52,9 @@ function App() {
           <Col>
           <Card style={{ height: '800px' }}>
               <Card.Body>
-                <Card.Title>What can be improved</Card.Title>
+                <Card.Title>Needs Improvement</Card.Title>
                 <Card.Text>
-                <Button onclick={addImprove}>Add Item</Button>
+                <Button onClick={addImprove}>Add Item</Button>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -58,9 +62,9 @@ function App() {
           <Col>
           <Card style={{ height: '800px' }}>
               <Card.Body>
-                <Card.Title>Action Items</Card.Title>
+                <Card.Title>Actionable Items</Card.Title>
                 <Card.Text>
-                <Button onclick={addActionItem}>Add Item</Button>
+                <Button onClick={addActionItem}>Add Item</Button>
                 </Card.Text>
               </Card.Body>
             </Card>
