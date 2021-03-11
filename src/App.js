@@ -84,7 +84,7 @@ function App() {
                 <Col>
                   <textarea value={positiveText} onChange={handleWentWellText} />
                 </Col>
-                <Button class="btn btn-secondary btn-lg btn-block" onClick={addWentWell} style={{ marginBottom: '5px' }}>Add Item</Button>
+                <button class="btn btn-secondary btn-lg btn-block" onClick={addWentWell} style={{ marginBottom: '5px' }}>Add Item</button>
 
                 {cardListPositive}
                 </Card.Text>
@@ -99,7 +99,7 @@ function App() {
                 <Col>
                   <textarea value={improveText} onChange={handleImproveText} />
                 </Col>
-                <Button class="btn btn-secondary btn-lg btn-block" onClick={addImprove} style={{ marginBottom: '5px' }}>Add Item</Button>
+                <button class="btn btn-secondary btn-lg btn-block" onClick={addImprove} style={{ marginBottom: '5px' }}>Add Item</button>
 
                 {cardListImprove}
                 </Card.Text>
@@ -114,7 +114,7 @@ function App() {
                 <Col>
                   <textarea value={actionText} onChange={handleActionText} />
                 </Col>
-                <Button class="btn btn-secondary btn-lg btn-block" onClick={addActionItem} style={{ marginBottom: '5px' }}>Add Item</Button>
+                <button class="btn btn-secondary btn-lg btn-block" onClick={addActionItem} style={{ marginBottom: '5px' }}>Add Item</button>
 
                 {cardListAction}
                 </Card.Text>
