@@ -7,19 +7,41 @@ import { Container, Row, Col, Card, Button} from 'react-bootstrap';
 function App() {
 
   function addWentWell() {
-    setCardList(cardList.concat(<ContentCard text="test"></ContentCard>));
-    console.log(cardList);
+    setCardListPositive(cardListPositive.concat(<ContentCard text={positiveText}></ContentCard>));
+    console.log(cardListPositive);
   }
 
   function addImprove(){
-    console.log("test");
+    setCardListImprove(cardListImprove.concat(<ContentCard text={improveText}></ContentCard>));
+    console.log(cardListImprove);
   }
+
 
   function addActionItem(){
-    console.log("test");
+    setCardListAction(cardListAction.concat(<ContentCard text={actionText}></ContentCard>));
+    console.log(cardListAction);
   }
 
-  const [cardList, setCardList] = useState([]);
+  function handleWentWellText(event){
+    setPositiveText(event.target.value);
+  }
+
+  function handleImproveText(event){
+    setImproveText(event.target.value);
+  }
+
+  function handleActionText(event){
+    setActionText(event.target.value);
+  }
+
+  const [cardListPositive, setCardListPositive] = useState([]);
+  const [positiveText, setPositiveText] = useState("");
+
+  const [cardListImprove, setCardListImprove] = useState([]);
+  const [improveText, setImproveText] = useState("");
+
+  const [cardListAction, setCardListAction] = useState([]);
+  const [actionText, setActionText] = useState("");
 
   return (
     <div className="App">
@@ -40,10 +62,13 @@ function App() {
           <Col>
             <Card style={{ height: '800px' }}>
               <Card.Body>
+
                 <Card.Title>Positive Outcomes</Card.Title>
                 <Card.Text>
+                <textarea value={positiveText} onChange={handleWentWellText} />
                 <Button onClick={addWentWell}>Add Item</Button>
-                {cardList}
+
+                {cardListPositive}
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -53,7 +78,10 @@ function App() {
               <Card.Body>
                 <Card.Title>Needs Improvement</Card.Title>
                 <Card.Text>
+                <textarea value={improveText} onChange={handleImproveText} />
                 <Button onClick={addImprove}>Add Item</Button>
+
+                {cardListImprove}
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -63,7 +91,10 @@ function App() {
               <Card.Body>
                 <Card.Title>Actionable Items</Card.Title>
                 <Card.Text>
+                <textarea value={actionText} onChange={handleActionText} />
                 <Button onClick={addActionItem}>Add Item</Button>
+
+                {cardListAction}
                 </Card.Text>
               </Card.Body>
             </Card>
