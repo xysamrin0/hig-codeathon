@@ -2,7 +2,7 @@ import './App.css';
 import React, {useEffect, useState} from "react";
 import ContentCard from './Components/ContentCard';
 import { Container, Row, Col, Card, Button} from 'react-bootstrap';
-
+import 'hig-ui-kit/docs/css/huk-only.css';
 
 function App() {
 
@@ -23,7 +23,9 @@ function App() {
 
   return (
     <div className="App">
-       
+       <button class="btn btn-secondary btn-lg btn-block btn-icon-lg">
+        <i class="icon icon-edit" aria-hidden="true"></i><span>Large Button w/Lg icon</span>
+        </button>
       <Container>
           <Row>
             <Card>
