@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-        <img src="https://s0.hfdstatic.com/sites/higux/dist/images/routing-example-2.svg" class="img-responsive" alt="routing-image2"></img>
+       
       <Container>
           <Row>
             <Card>
@@ -43,7 +43,7 @@ function App() {
               <Card.Body>
                 <Card.Title>Positive Outcomes</Card.Title>
                 <Card.Text>
-                <Button onClick={addWentWell}>Add Item</Button>
+                <button class="btn btn-secondary btn-lg btn-block" onClick={addWentWell}>Add Item</button>
                 {cardList}
                 </Card.Text>
               </Card.Body>
