@@ -1,18 +1,21 @@
 import './App.css';
+
 import { Container, Row, Col, Card, Button} from 'react-bootstrap';
 
 function App() {
 
-  const addWentWell = (test) =>{
+  function addWentWell() {
     numclicked = numclicked+1;
-  };
+  }
 
-  const addImprove = (test) =>{
+  function addImprove(){
     console.log("test");
-  };
-  const addActionItem = (test) =>{
+  }
+
+  function addActionItem(){
     console.log("test");
-  };
+  }
+
   var numclicked = 1;
   return (
     <div className="App">
@@ -38,7 +41,7 @@ function App() {
               <Card.Body>
                 <Card.Title>What went well</Card.Title>
                 <Card.Text>
-                <Button onclick={addWentWell}>Add Item</Button>
+                <Button onClick={addWentWell}>Add Item</Button>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -48,7 +51,7 @@ function App() {
               <Card.Body>
                 <Card.Title>What can be improved</Card.Title>
                 <Card.Text>
-                <Button onclick={addImprove}>Add Item</Button>
+                <Button onClick={addImprove}>Add Item</Button>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -58,7 +61,7 @@ function App() {
               <Card.Body>
                 <Card.Title>Action Items</Card.Title>
                 <Card.Text>
-                <Button onclick={addActionItem}>Add Item</Button>
+                <Button onClick={addActionItem}>Add Item</Button>
                 </Card.Text>
               </Card.Body>
             </Card>
