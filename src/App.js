@@ -1,6 +1,7 @@
 import './App.css';
 import { Container, Row, Col, Card, Button} from 'react-bootstrap';
 
+
 function App() {
 
   const addWentWell = (test) =>{
@@ -16,6 +17,7 @@ function App() {
   var numclicked = 1;
   return (
     <div className="App">
+        <img src="https://s0.hfdstatic.com/sites/higux/dist/images/routing-example-2.svg" class="img-responsive" alt="routing-image2"></img>
       <Container>
           <Row>
             <Card>
