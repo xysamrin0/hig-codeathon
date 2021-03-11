@@ -1,16 +1,39 @@
 .card {
-  margin: 0 auto; /* Added */
-  float: none; /* Added */
-  margin-bottom: 10px; /* Added */
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+  }
+  
+  .btn-secondary, a.btn-secondary {
+    background-color: #3a5a78;
+    color: #fff;
+    border: 1px solid #3a5a78;
 }
-
-
-
-
-
-
-
-.App {
-  text-align: center;
+.btn-lg, .btn-group-lg > .btn, a.btn-lg, .btn-group-lg > a.btn {
+    font-size: 1.125em;
+    line-height: 1.143em;
+    padding-top: 0.85em;
+    padding-bottom: 0.85em;
 }
-
+.btn-icon-lg, a.btn-icon-lg {
+    height: 52.49px;
+}
+.btn, a.btn {
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    font-family: "HCo Gotham", arial, sans-serif;
+    font-style: normal;
+    padding: 0.75em 1em;
+    text-align: center;
+    vertical-align: middle;
+    white-space: normal;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+  
+  .App {
+    text-align: center;
+  }

@@ -1,7 +1,7 @@
 import './App.css';
 import React, {useEffect, useState} from "react";
 import ContentCard from './Components/ContentCard';
-import { Container, Row, Col, Card, Button} from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Navbar} from 'react-bootstrap';
 
 
 function App() {
@@ -49,6 +49,19 @@ function App() {
   return (
     <div className="App">
       <Container>
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand href="#home">
+        <img
+            alt=""
+            src="images/logo.svg"
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+        />{' '}
+        HIG Retro Board
+        </Navbar.Brand>
+
+        </Navbar>
           <Row>
             <Card>
               <Card.Body>
@@ -71,7 +84,7 @@ function App() {
                 <Col>
                   <textarea value={positiveText} onChange={handleWentWellText} />
                 </Col>
-                <Button onClick={addWentWell} style={{ marginBottom: '5px' }}>Add Item</Button>
+                <Button class="btn btn-secondary btn-lg btn-block" onClick={addWentWell} style={{ marginBottom: '5px' }}>Add Item</Button>
 
                 {cardListPositive}
                 </Card.Text>
@@ -86,7 +99,7 @@ function App() {
                 <Col>
                   <textarea value={improveText} onChange={handleImproveText} />
                 </Col>
-                <Button onClick={addImprove} style={{ marginBottom: '5px' }}>Add Item</Button>
+                <Button class="btn btn-secondary btn-lg btn-block" onClick={addImprove} style={{ marginBottom: '5px' }}>Add Item</Button>
 
                 {cardListImprove}
                 </Card.Text>
@@ -101,7 +114,7 @@ function App() {
                 <Col>
                   <textarea value={actionText} onChange={handleActionText} />
                 </Col>
-                <Button onClick={addActionItem} style={{ marginBottom: '5px' }}>Add Item</Button>
+                <Button class="btn btn-secondary btn-lg btn-block" onClick={addActionItem} style={{ marginBottom: '5px' }}>Add Item</Button>
 
                 {cardListAction}
                 </Card.Text>
